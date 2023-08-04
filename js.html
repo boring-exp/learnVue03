@@ -30,6 +30,11 @@
     // function $(id) {
     //   return document.getElementById(id)
     // }
+    setTimeout(() => {
+      const newDiv = document.createElement('div')
+      newDiv.textContent = '我是新创建的div'
+      document.body.appendChild(newDiv)
+    }, 3000) 
   </script>
 </body>
 
