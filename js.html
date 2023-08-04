@@ -18,17 +18,14 @@
     const btnEl = document.getElementById('btn')
     const resultEl = document.getElementById('result')
 
-    function handleClick() {
-      console.log(questionEl.value)
-      // 网络请求
-      setTimeout(() => {
-        resultEl.textContent = questionEl.value + '后端返回点东西'
-      }, 500);
+    function handleClick(e) {
+      const val = e.target.value
+      // const val = questionEl.value
+      resultEl.textContent = val
     }
 
+    questionEl.addEventListener('input', handleClick)
     btnEl.addEventListener('click', handleClick)
-    btnEl.addEventListener('click', handleClick)
-    btnEl.removeEventListener('click', handleClick)
 
     // function $(id) {
     //   return document.getElementById(id)

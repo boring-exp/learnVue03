@@ -24,7 +24,7 @@
     <button v-on:click="handleClick">点击获取内容</button>
 
     <!-- 插值表达式 -->
-    <div>展示结果: <span>{{result}}</span></div>
+    <div>展示结果: <span>{{question}}</span></div>
   </div>
 
   <script type="module">
@@ -42,10 +42,13 @@
           // 绑定时不需要
           result.value = question.value
         }
+
+        setTimeout(() => {
+          question.value = '后端返回点东西'
+        }, 4000);
         // 2. 需要在模板中进行绑定的变量和方法，通过setup的return返回即可
         return {
           question,
-          result,
           handleClick,
         }
       }
