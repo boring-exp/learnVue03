@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- 降低dom操作的心智成本，记jquery的api -->
+  请输入: <input id="question" />
+  <button id="btn">点击获取内容</button>
+  <div>展示结果: <span id="result"></span></div>
+
+  <script>
+    // 1.获取元素
+    const questionEl = $('#question')
+    const btnEl = $('#btn')
+    const resultEl = $('#result')
+
+    function handleClick() {
+      // get
+      console.log(questionEl.val())
+      // 网络请求
+      setTimeout(() => {
+        // set
+        resultEl.text(questionEl.val() + '后端返回点东西')
+      }, 500);
+    }
+
+    btnEl.on('click', handleClick)
+  </script>
+</body>
+</html>
